@@ -1,58 +1,76 @@
-'use client';
-
-import Header from "@/components/header"
-import { useState, useEffect } from 'react';
+import { Dock, DockIcon } from "@/components/magicui/dock";
+import { ModeToggle } from "@/components/mode-toggle";
+import { buttonVariants } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { DATA } from "@/data/resume";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
-import Image from "next/image";
-import Magnetic from "@/common/Magnetic";
-import { navVariants } from "@/utils/motion";
-import { motion } from "framer-motion";
 
-const NavBar: React.FC = () => {
-  const [scrollTarget, setScrollTarget] = useState<HTMLElement | null>(null);
-
-  useEffect(() => {
-    if (scrollTarget) {
-      scrollTarget.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [scrollTarget]);
-
+export default function Navbar() {
   return (
-    <header className='w-full absolute z-10'>
-      <nav className=''>
-        <motion.div
-          variants={navVariants}
-          initial="hidden"
-          whileInView="show"
-          className="max-w-[1440px] mx-auto flex justify-between items-center sm:px-16 px-6 py-8 bg-transparent"
-        >
-          <Link href='/'>
-            <div className='flex justify-center items-center'>
-              <Image src={'/AD Hub W.png'} width={70} height={70} alt="logo"/>
-            </div>
-          </Link>
-
-          <div className="hidden md:flex justify-center items-center gap-[20px]">
-            <Magnetic>
-              <Link href='/about'><p className="nav">About</p></Link>
-            </Magnetic>
-            <Magnetic>
-              <a href="#explore" onClick={(e) => { e.preventDefault(); setScrollTarget(document.getElementById('explore')); }}>
-                <p className="nav">Explore</p>
-              </a>
-            </Magnetic>
-            <Magnetic>
-              <Link href='/contact'><p className="nav">Contact</p></Link>
-            </Magnetic>
-          </div>
-          <div className="md:hidden flex">
-            <Header />
-          </div>
-          
-        </motion.div>
-      </nav>
-    </header>
+    <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14">
+      <div className="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>
+      <Dock className="z-50 pointer-events-auto relative mx-auto flex min-h-full h-full items-center px-1 bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] ">
+        {DATA.navbar.map((item) => (
+          <DockIcon key={item.href}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href={item.href}
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "size-12"
+                  )}
+                >
+                  <item.icon className="size-4" />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{item.label}</p>
+              </TooltipContent>
+            </Tooltip>
+          </DockIcon>
+        ))}
+        <Separator orientation="vertical" className="h-full" />
+        {Object.entries(DATA.contact.social)
+          .filter(([_, social]) => social.navbar)
+          .map(([name, social]) => (
+            <DockIcon key={name}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={social.url}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12"
+                    )}
+                  >
+                    <social.icon className="size-4" />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{name}</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+          ))}
+        <Separator orientation="vertical" className="h-full py-2" />
+        <DockIcon>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <ModeToggle />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Theme</p>
+            </TooltipContent>
+          </Tooltip>
+        </DockIcon>
+      </Dock>
+    </div>
   );
-};
-
-export default NavBar;
+}
