@@ -77,7 +77,7 @@ export default function Page() {
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   We&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
+                  websites to complex web applications. Here are a few of our
                   favorites.
                 </p>
               </div>
@@ -157,7 +157,7 @@ export default function Page() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just shoot us a message{" "}
+                Want to chat? Just shoot us a dm{" "}
                 <Link
                   href={DATA.contact.tel}
                   className="text-blue-500 hover:underline"
