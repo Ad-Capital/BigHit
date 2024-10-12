@@ -30,7 +30,7 @@ export const DATA = {
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    tel: "https://wa.me/+2348153907973",
+    tel: "https://wa.me/+2348133127067",
     social: {
       email: {
         name: "Send Email",

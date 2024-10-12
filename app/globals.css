@@ -4,94 +4,94 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 210 11.1% 3.53%;
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(210, 11.1%, 3.53%);
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 11.1% 3.53%;
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(210, 11.1%, 3.53%);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 11.1% 3.53%;
+    --popover: hsl(0, 0%, 100%);
+    --popover-foreground: hsl(210, 11.1%, 3.53%);
 
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+    --primary: hsl(0, 0%, 9%);
+    --primary-foreground: hsl(0, 0%, 98%);
 
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
+    --secondary: hsl(0, 0%, 96.1%);
+    --secondary-foreground: hsl(0, 0%, 9%);
 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
+    --muted: hsl(0, 0%, 96.1%);
+    --muted-foreground: hsl(0, 0%, 45.1%);
 
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --accent: hsl(0, 0%, 96.1%);
+    --accent-foreground: hsl(0, 0%, 9%);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: hsl(0, 84.2%, 60.2%);
+    --destructive-foreground: hsl(0, 0%, 98%);
 
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --border: hsl(0, 0%, 89.8%);
+    --input: hsl(0, 0%, 89.8%);
+    --ring: hsl(0, 0%, 3.9%);
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 210 11.1% 3.53%;
-    --foreground: 0 0% 98%;
+    --background: hsl(210, 11.1%, 3.53%);
+    --foreground: hsl(0, 0%, 98%);
 
-    --card: 210 11.1% 3.53%;
-    --card-foreground: 0 0% 98%;
+    --card: hsl(210, 11.1%, 3.53%);
+    --card-foreground: hsl(0, 0%, 98%);
 
-    --popover: 210 11.1% 3.53%;
-    --popover-foreground: 0 0% 98%;
+    --popover: hsl(210, 11.1%, 3.53%);
+    --popover-foreground: hsl(0, 0%, 98%);
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
+    --primary: hsl(0, 0%, 98%);
+    --primary-foreground: hsl(0, 0%, 9%);
 
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: hsl(0, 0%, 14.9%);
+    --secondary-foreground: hsl(0, 0%, 98%);
 
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
+    --muted: hsl(0, 0%, 14.9%);
+    --muted-foreground: hsl(0, 0%, 63.9%);
 
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: hsl(0, 0%, 14.9%);
+    --accent-foreground: hsl(0, 0%, 98%);
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: hsl(0, 62.8%, 30.6%);
+    --destructive-foreground: hsl(0, 0%, 98%);
 
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --border: hsl(0, 0%, 14.9%);
+    --input: hsl(0, 0%, 14.9%);
+    --ring: hsl(0, 0%, 83.1%);
   }
 }
 
 @layer base {
-  /* Custom background class using the CSS variable */
-  .bg-background {
-    background-color: hsl(var(--background));
+  * {
+    @apply border-border;
   }
-  
-  /* Custom text color class using the CSS variable */
-  .text-foreground {
-    color: hsl(var(--foreground));
+}
+
+@layer utilities {
+  .border-border {
+    border-color: var(--border); /* Defines the custom utility */
   }
 
-  * {
-    border-color: hsl(var(--border));
+  .bg-background {
+    background-color: var(--background); /* Defines the custom background utility */
   }
-  
-  body {
-    @apply bg-background text-foreground;
+
+  .text-foreground {
+    color: var(--foreground); /* Defines the custom text color utility */
   }
 }
 
 h3 code {
-  @apply !text-lg md:!text-xl;
+  @apply text-lg md:text-xl;
 }
 
 pre {
-  @apply !px-0 rounded-lg overflow-x-auto py-4;
+  @apply px-0 rounded-lg overflow-x-auto py-4;
 }
 
 pre [data-line] {
@@ -99,7 +99,7 @@ pre [data-line] {
 }
 
 code {
-  @apply text-sm md:text-base !leading-loose;
+  @apply text-sm md:text-base leading-loose;
 }
 
 pre > code {
@@ -130,8 +130,12 @@ code[data-line-numbers] > [data-line]::before {
   @apply inline-block w-4 mr-4 text-right text-gray-500;
 }
 
-code {
-  counter-reset: line;
+code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  width: 2rem;
+}
+
+code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  width: 3rem;
 }
 
 code > [data-line]::before {
@@ -145,12 +149,3 @@ code > [data-line]::before {
   text-align: right;
   color: gray;
 }
-
-code[data-line-numbers-max-digits="2"] > [data-line]::before {
-  width: 2rem;
-}
-
-code[data-line-numbers-max-digits="3"] > [data-line]::before {
-  width: 3rem;
-}
-
