@@ -10,8 +10,9 @@ export const DATA = {
   description:
     "Your partner in creating seamless, efficient digital platforms.",
   summary:
-    "Hi there, I'm Barry, a skilled and dedicated App Developer. I've spent close on 7 years honing my skills to bring creativity and precision to every project I work on. Whether it's Web Development or Mobile App Development, I'm all about delivering quality and results the speak for themselves. Let'sconnect and see how I can add value to your next big idea.",
-  avatarUrl: "/Art.png",
+    "Hi there, I'm Barry Chinedu Philip, a skilled and dedicated App Developer. I've spent close on 7 years honing my skills to bring creativity and precision to every project I work on. Whether it's Web Development or Mobile App Development, I'm all about delivering quality and results the speak for themselves. Let'sconnect and see how I can add value to your next big idea.",
+  avatarUrl: "/profile.jpg",
+  logo: "/Art.png",
   skills: [
     "UI/UX",
     "React",
