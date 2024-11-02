@@ -48,10 +48,10 @@ export function AppCard({
         >
             <Link
                 href={href || "#"}
-                className={cn("flex flex-row cursor-pointer align-center justify-center ", className)}
+                className={cn("flex flex-row cursor-pointer align-center justify-center", className)}
             >
                 {image && (
-                    <div  className={cn("flex flex-row justify-center align-center cursor-pointer", className)}>
+                    <div  className={cn("flex flex-row justify-center align-center cursor-pointer m-2", className)}>
                         <Image
                             src={image}
                             alt={title}

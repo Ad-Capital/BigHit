@@ -2,17 +2,18 @@ import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 
 export const DATA = {
-  name: "CODELAND",
-  initials: "CL",
-  url: "https://dillion.io",
-  location: "San Francisco, CA",
+  name: "BIGHIT",
+  initials: "BH",
+  url: "https://www.google.com",
+  location: "Anambra, Nigeria.",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
     "Your partner in creating seamless, efficient digital platforms.",
   summary:
-    "With over 5 years of collective experience in the tech and creative industries, our team has partnered with diverse clients to deliver innovative, functional, and visually engaging digital solutions.",
-  avatarUrl: "/codeland.png",
+    "Hi there, I'm Barry, a skilled and dedicated App Developer. I've spent close on 7 years honing my skills to bring creativity and precision to every project I work on. Whether it's Web Development or Mobile App Development, I'm all about delivering quality and results the speak for themselves. Let'sconnect and see how I can add value to your next big idea.",
+  avatarUrl: "/Art.png",
   skills: [
+    "UI/UX",
     "React",
     "Next.js",
     "Typescript",
@@ -20,24 +21,56 @@ export const DATA = {
     "Python",
     "Go",
     "Dart",
+    "Flutter",
     "Docker",
     "Php",
     "Java",
     "C++",
+    "C#",
+    "Unity",
+    "Unreal Engine"
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    tel: "https://wa.me/+2348133127067",
+    email: "mailto:barryphilips10a@gmail.com",
+    tel: "+2348106781995",
     social: {
+      Whatsapp: {
+        name: "Whatsapp",
+        url: "https://wa.me/+2348106781995",
+        icon: Icons.whatsapp,
+
+        navbar: true,
+      },
+      Instagram: {
+        name: "Instagram",
+        url: "https://www.instagram.com/bighitcoder",
+        icon: Icons.Instagram,
+
+        navbar: true,
+      },
+      X: {
+        name: "X",
+        url: "https://x.com/bighitcoder/",
+        icon: Icons.x,
+
+        navbar: true,
+      },
+      Threads: {
+        name: "Threads",
+        url: "https://www.threads.net/@bighitcoder?invite=0",
+        icon: Icons.Threads,
+        navbar: true,
+      },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:barryphilips10a@gmail.com",
         icon: Icons.email,
 
-        navbar: false,
+        navbar: true,
       },
     },
   },
@@ -298,6 +331,39 @@ export const DATA = {
       ],
       image: "/mockup3/1.png",
       image2: "/mockup3/2.png"
+    },
+    {
+      title: "Wages Finance",
+      href: "/",
+      dates: "September 2024 - October 2024",
+      active: true,
+      description:
+        "Designed and developed Wages Finance as a digital cooperative platform to make saving and investing simple and secure. With features like earning up to 20% annually on savings, low-interest loans with flexible repayment, automated contributions, real-time updates, and a secure wallet, Wages Finance empowers users to manage their finances with ease. Take control of your financial future with Wages Finance.",
+      technologies: [
+        "Flutter",
+        "Paystack",
+        "OAuth 2.0",
+        "PostgreSQL",
+        "WebRTC",
+        "Firebase",
+        "AWS",
+        "Google Analytics",
+        "SSL/TLS",
+      ],
+      links: [
+        // {
+        //   type: "App Store",
+        //   href: "https://apps.apple.com/ng/app/clubhouse/id1503133294",
+        //   icon: <Icons.appstore className="size-3" />,
+        // },
+        {
+          type: "Play Store",
+          href: "https://play.google.com/store/apps/details?id=com.wages.wages_finance",
+          icon: <Icons.playstore className="size-3" />,
+        },
+      ],
+      image: "/mockup4/wages.png",
+      image2: "/mockup4/wages2.png"
     },
   ]
   } as const;

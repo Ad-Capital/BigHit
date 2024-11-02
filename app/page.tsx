@@ -23,7 +23,7 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none mb-[20px]"
                 yOffset={8}
-                text={`We're ${DATA.name.split(" ")[0]}`}
+                text={` ${DATA.name.split(" ")[0]}`}
               />
               <BlurFadeText
                 className="max-w-[600px] md:text-xl"
@@ -32,7 +32,7 @@ export default function Page() {
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
+              <Avatar className="size-28 border bg-white">
                 <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
@@ -73,11 +73,11 @@ export default function Page() {
                   Projects
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Check out our latest work
+                  Check out my latest work
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  We&apos;ve worked on a variety of projects, from simple
-                  websites to complex web and mobile applications. Here are a few of our
+                  I&apos;ve worked on a variety of projects, from simple
+                  websites to complex web and mobile applications. Here are a few of my
                   favorites.
                 </p>
               </div>
@@ -157,14 +157,14 @@ export default function Page() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just shoot us {" "}
+                Want to chat? Just shoot me {" "}
                 <Link
                   href={DATA.contact.tel}
                   className="text-blue-500 hover:underline"
                 >
                   with a direct message via whatsapp
                 </Link>{" "}
-                and we&apos;ll respond as soon as we can. we will ignore all
+                and I&apos;ll respond as soon as I can. I will ignore all
                 soliciting.
               </p>
             </div>
