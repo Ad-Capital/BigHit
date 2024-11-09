@@ -1,30 +1,16 @@
-"use client"
-
-import { useState, useEffect } from "react";
-import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { AppCard } from "@/components/app-card";
+import { AppCard } from "@/components/app-card"
 import { ProjectCard } from "@/components/project-card";
-import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import { useTheme } from "next-themes";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
-  const { theme } = useTheme(); // Using next-themes' useTheme hook
-  const [logoSrc, setLogoSrc] = useState<"/Art.png" | "/Artdark.png">(DATA.logoLight); // Explicitly define the type
-
-  useEffect(() => {
-    // Update logo based on the current theme
-    setLogoSrc(theme === "dark" ? DATA.logoDark : DATA.logoLight);
-  }, [theme]);
-
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
@@ -33,7 +19,7 @@ export default function Page() {
             <div className="flex-col flex flex-1 space-y-1.5">
               <BlurFade delay={BLUR_FADE_DELAY}>
                 <Avatar className="size-28 bg-white">
-                  <AvatarImage alt={DATA.name} src={logoSrc} />
+                  <AvatarImage alt={DATA.name} src={DATA.logo} />
                   <AvatarFallback>{DATA.initials}</AvatarFallback>
                 </Avatar>
               </BlurFade>
@@ -52,7 +38,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">About</h2>
@@ -170,12 +155,12 @@ export default function Page() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just shoot me with a direct message via {" "}
+                Want to chat? Just shoot me {" "}
                 <Link
                   href={DATA.contact.tel}
                   className="text-blue-500 hover:underline"
                 >
-                   whatsapp
+                  with a direct message via whatsapp
                 </Link>{" "}
                 and I&apos;ll respond as soon as I can. I will ignore all
                 soliciting.
