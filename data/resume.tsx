@@ -10,11 +10,13 @@ export const DATA = {
   description:
     "Your partner in creating seamless, efficient digital platforms.",
   summary:
-    "Hi there, I'm Barry Chinedu Philip, a skilled and dedicated App Developer. I've spent close on 7 years honing my skills to bring creativity and precision to every project I work on. Whether it's Web Development or Mobile App Development, I'm all about delivering quality and results the speak for themselves. Let'sconnect and see how I can add value to your next big idea.",
+    "Hi there, I'm Barry Chinedu Philip, a skilled and dedicated App Developer. I've spent more than 6 years honing my skills to bring creativity and precision to every project I work on. Whether it's Web Development or Mobile App Development, I'm all about delivering quality and results that speak for themselves. Let's connect and see how I can add value to your next big idea.",
   avatarUrl: "/profile.jpg",
   logo: "/Art.png",
+  logoLight: '/Art.png',
+  logoDark: '/Artdark.png',
   skills: [
-    "UI/UX",
+    "Ui/Ux",
     "React",
     "Next.js",
     "Typescript",
