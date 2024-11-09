@@ -18,7 +18,7 @@ const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   const { theme } = useTheme(); // Using next-themes' useTheme hook
-  const [logoSrc, setLogoSrc] = useState(DATA.logoLight);
+  const [logoSrc, setLogoSrc] = useState<"/Art.png" | "/Artdark.png">(DATA.logoLight); // Explicitly define the type
 
   useEffect(() => {
     // Update logo based on the current theme
@@ -32,7 +32,7 @@ export default function Page() {
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
               <BlurFade delay={BLUR_FADE_DELAY}>
-                <Avatar className="size-28">
+                <Avatar className="size-28 bg-white">
                   <AvatarImage alt={DATA.name} src={logoSrc} />
                   <AvatarFallback>{DATA.initials}</AvatarFallback>
                 </Avatar>
